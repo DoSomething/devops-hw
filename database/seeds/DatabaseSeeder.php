@@ -1,5 +1,6 @@
 <?php
 
+use DevOpsHW\Models\Post;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,6 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+      factory(Task::class, 100)->create();
     }
 }

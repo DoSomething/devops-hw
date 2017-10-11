@@ -11,7 +11,7 @@
 |
 */
 
-use App\Task;
+use DevOpsHW\Task;
 use Illuminate\Http\Request;
 
 Route::group(['middleware' => ['web']], function () {
@@ -53,4 +53,17 @@ Route::group(['middleware' => ['web']], function () {
 
         return redirect('/');
     });
+});
+
+// v1 routes
+Route::group(['prefix' => 'api/v1', 'middleware' => ['web']], function () {
+    // tasks
+    // Route::get('/tasks', function () {
+    //     return view('tasks', [
+    //         'tasks' => Task::orderBy('created_at', 'asc')->get()
+    //     ]);
+    // });
+
+    Route::get('tasks', 'Api\TasksController@index');
+
 });

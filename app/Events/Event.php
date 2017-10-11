@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Events;
+namespace DevOpsHW\Events;
 
 abstract class Event
 {

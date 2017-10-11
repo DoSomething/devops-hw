@@ -1,5 +1,8 @@
 <?php
 
+use Faker\Generator;
+use DevOpsHW\Models\Task;
+
 /*
 |--------------------------------------------------------------------------
 | Model Factories
@@ -11,8 +14,8 @@
 |
 */
 
-$factory->define(App\Task::class, function (Faker\Generator $faker) {
+$factory->define(Task::class, function (Faker\Generator $faker) {
     return [
-        'name' => $faker->title,
+        'name' => $faker->sentence($nbWords = 2, $variableNbWords = true),
     ];
 });
